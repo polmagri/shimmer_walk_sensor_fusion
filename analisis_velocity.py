@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 from scipy.interpolate import interp1d
 import numpy as np
 from scipy.ndimage import uniform_filter1d
+from scipy.signal import savgol_filter
+
 # Liste per memorizzare i dati importati
 imported_timestamp1 = []
 imported_velocity_norm1 = []
@@ -92,8 +94,6 @@ plt.ylabel('Velocity (m/s)')
 plt.grid(True)
 plt.legend()
 plt.show()
-
-from scipy.signal import savgol_filter
 
 # Applica il filtro di Savitzky-Golay alla velocità totale
 smoothed_total_velocity = savgol_filter(total_velocity, window_length=251, polyorder=5)
