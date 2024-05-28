@@ -11,13 +11,13 @@ The inputs are CSV files (see example):
 - Accelerometer in m/(s*s)
 - Gyroscope in deg/sec
 
-The first script (obtain-velocity.csv) uses the AHRS Algorithm for sensor fusion.
+The first script (obtain_velocity.py) uses the AHRS Algorithm for sensor fusion.
 You can see all the optimization parameters in detail from this link.
 It returns a .csv file to be saved in the same repository containing the time column and the speed column.
 Select the start and end time (in seconds) of the data you want to analyze.
 Perform this procedure twice in order to save the right foot speed and left foot speed. (remember to change the save name to avoid overwriting)
 
-The second script (analysis_velocity) imports the two previously saved speed files, performs a plot, and synchronizes the data (select the desired time).
+The second script (analysis_velocity.py) imports the two previously saved speed files, performs a plot, and synchronizes the data (select the desired time).
 Then, it performs an interpolation of the speeds to transition from discrete data to continuous time and uses various methods and filters to merge them together:
 - Moving average
 - Savitzky-Golay filter
